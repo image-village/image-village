@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { DefaultTheme } from 'styled-components';
+import GlobalStyles  from "./components/styles/Global"
+import { ThemeProvider } from "styled-components";
+import Header from "./components/Header";
+import {Container} from "./components/styles/Container.styled";
+
+//Themes - g
+// Header color, body, footer color, button color etc.
+
+const theme: DefaultTheme = {
+    colors: {
+        header: "#ebfbff",
+        body: '#fff',
+        footer: '#003333',
+    }
+}
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <ThemeProvider theme={theme} >
+        <>
+            <GlobalStyles />
+            <Header/>
+            <Container>
+                <h1>Hello James! </h1>
+            </Container>
+        </>
+        </ThemeProvider>
+    )
 }
 
 export default App;

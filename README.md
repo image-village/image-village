@@ -6,5 +6,3 @@ A demo microservices project
 - image handling
 - payments
 - analytics
-
-
